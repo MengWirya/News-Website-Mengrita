@@ -2,20 +2,8 @@ import express from "express";
 import nodemailer from "nodemailer";
 import bodyParser from "body-parser";
 import cors from "cors";
-import path from "path";
-import { fileURLToPath } from "url";
 
 const app = express();
-
-app.use(cors());
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-app.use(express.static(path.join(__dirname, "public")));
-
 app.use(cors({ origin: "http://127.0.0.1:5500" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
