@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mengrita - Wiryateja Pamungkas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .animate-gradient {
+        background: linear-gradient(
+          90deg,
+          #035a94 0%,
+          #4a70a9 33%,
+          #069cbe 66%,
+          #035a94 100%
+        );
+        background-size: 250% 250%;
+        animation: wave 6s linear infinite;
+        position: relative;
+      }
+
+      @keyframes wave {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      body {
+        font-family: "Newsreader", serif;
+      }
+
+      .font-newsreader {
+        font-family: "Newsreader", serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: scale(0.95);
+        animation: fadeIn 1.5s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <nav
+      class="sticky top-0 z-50 w-full animate-gradient border-b border-[#035a94]"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1"
+      >
+        <div class="flex items-center gap-3 fade-in">
+          <img
+            src="Image_Element/Company_Logos.png"
+            class="h-24"
+            alt="Flowbite Logo"
+          />
+          <span
+            class="self-center text-3xl whitespace-nowrap text-[#f5f5f5] font-newsreader font-semibold"
+            >Mengrita</span
+          >
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 fade-in"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 px-3 text-[#069cbe] rounded-lg bg-white hover:bg-[#f5f5f5]/75 bg-[#f5f5f5]/75 hover:underline"
+                aria-current="page"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a
+                href="form.html"
+                class="block py-2 px-3 text-[#069cbe] rounded-lg bg-white hover:bg-[#f5f5f5]/75 hover:underline"
+                >Form User</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO 1 -->
+    <section id="hero1" class="bg-[#069cbe]">
+      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:items-center">
+          <div class="md:col-span-1">
+            <img
+              src="Image_Element/People_Reading_Element_03.png"
+              class="rounded w-full block fade-in"
+              alt="Developer secret note 01 : Saya penasaran kakak itu baca source code kita kah?"
+            />
+          </div>
+
+          <div class="md:col-span-1">
+            <div class="max-w-prose md:max-w-none text-center fade-in">
+              <h2
+                class="text-2xl font-newsreader font-semibold sm:text-5xl text-[#f5f5f5]"
+              >
+                Mengrita
+              </h2>
+
+              <p class="mt-4 text-[#f5f5f5] text-1xl">
+                "Berita, Cerita, dan Derita semua kami sampaikan di Mengrita"
+              </p>
+
+              <div class="mt-8">
+                <a
+                  href="#Pencari_Berita"
+                  class="hover:underline inline-block rounded-md bg-[#f5f5f5] px-10 py-2 text-2xl font-medium text-[#069cbe] transition hover:bg-[#f5f5f5]/75"
+                >
+                  Cari Berita Sekarang
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-1 fade-in">
+            <img
+              src="Image_Element/People_Reading_Element_04.png"
+              class="rounded w-full block"
+              alt="Developer secret note 02 : Jujur website ini gak terlalu bagus jadi maaf ya"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO 2 -->
+    <section>
+      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8 fade-in"
+        >
+          <div>
+            <div class="max-w-prose md:max-w-none">
+              <h2 class="text-2xl font-semibold text-[#069cbe] sm:text-3xl">
+                Lebih dari sekedar penyedia berita
+              </h2>
+
+              <p class="mt-4">
+                Mengrita hadir untuk memberikan Anda akses mudah ke berbagai
+                berita terkini dari seluruh dunia. Dengan antarmuka yang
+                sederhana dan intuitif, kami memastikan Anda dapat menemukan
+                informasi yang Anda butuhkan dengan cepat dan efisien.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <img
+              src="Image_Element/Newspaper_Element_01.jpg"
+              class="rounded"
+              alt="Developer secret note 03 : Untuk coding websitenya harus pakai Node sama react kah? (Belum bisa kak😭😭😭)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO 3 -->
+    <div class="text-white text-center py-6 fade-in" id="Pencari_Berita">
+      <h1 class="text-[#069cbe] text-3xl font-bold mb-3">- Pencari Berita -</h1>
+      <input
+        type="text"
+        id="searchBar"
+        placeholder="HIDUPKAN RASA INGIN TAU ANDA..."
+        class="w-4/5 md:w-1/3 px-4 py-2 mt-4 rounded-lg text-black border-2 border-[#069cbe] placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#069cbe]/50"
+      />
+
+      <!-- HERO 4 / CATEGORIES -->
+      <div class="max-w-screen-xl mx-auto px-4 py-6">
+        <div class="flex flex-wrap gap-4 justify-center mb-8 fade-in">
+          <button
+            id="general"
+            class="px-6 py-2 bg-[#069cbe] text-white rounded-lg hover:bg-[#069cbe]/75 hover:underline"
+          >
+            General
+          </button>
+          <button
+            id="business"
+            class="px-6 py-2 bg-[#069cbe] text-white rounded-lg hover:bg-[#069cbe]/75 hover:underline"
+          >
+            Bisnis
+          </button>
+          <button
+            id="sport"
+            class="px-6 py-2 bg-[#069cbe] text-white rounded-lg hover:bg-[#069cbe]/75 hover:underline"
+          >
+            Olahraga
+          </button>
+          <button
+            id="entertainment"
+            class="px-6 py-2 bg-[#069cbe] text-white rounded-lg hover:bg-[#069cbe]/75 hover:underline"
+          >
+            Hiburan
+          </button>
+          <button
+            id="technology"
+            class="px-6 py-2 bg-[#069cbe] text-white rounded-lg hover:bg-[#069cbe]/75 hover:underline"
+          >
+            Teknologi
+          </button>
+        </div>
+
+        <!-- NEWS HEADING -->
+        <div
+          id="newsType"
+          class="text-center text-2xl font-bold text-[#069cbe] mb-6 fade-in"
+        ></div>
+
+        <!-- NEWS CONTAINER -->
+        <div
+          id="newsdetails"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in"
+        ></div>
+      </div>
+
+      <!-- PAGINATION / NAVIGATION -->
+      <div
+        id="pagination"
+        class="flex justify-center items-center gap-2 py-6 fade-in"
+      ></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="bg-[#069cbe]">
+      <div class="mx-auto max-w-7xl px-4 pt-4 pb-8 sm:px-6 lg:px-8">
+        <div class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+          <div class="mx-auto max-w-sm lg:max-w-none">
+            <p class="mt-4 text-center text-[#f5f5f5] lg:text-left lg:text-lg">
+              Dibuat dengan 💔 oleh Wiryateja Pamungkas.
+            </p>
+            <a
+              href="https://wa.me/6281803061922"
+              target="_blank"
+              class="inline-block mt-4 bg-transparent border-2 border-[#f5f5f5] text-[#f5f5f5] font-bold py-3 px-6 rounded-full hover:bg-[#f5f5f5] hover:text-[#069cbe] transition-colors duration-300"
+            >
+              Panggil Aku di WhatsApp
+            </a>
+          </div>
+
+          <div class="flex items-center justify-center lg:justify-end">
+            <p class="text-center text-sm text-[#f5f5f5]">
+              Mengrita sejak 2025. Dilindungi oleh Hak Cipta.
+              <br />
+              Terimakasih banyak untuk
+              <a class="text-[#f5f5f5] underline hover:text-[#f5f5f5]"
+                >AI (Github Copilot, ChatGPT, Gemini)</a
+              >
+              serta
+              <a class="text-[#f5f5f5] underline hover:text-[#f5f5f5]"
+                >TailswindUI (Hyper UI, Daisy, Flowbite)</a
+              >
+              dan lainnya yang sudah membantu dalam pembuatan website ini.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

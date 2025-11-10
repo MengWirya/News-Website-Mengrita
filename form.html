@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengrita - Wiryateja Pamungkas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .animate-gradient {
+        background: linear-gradient(90deg, #035a94 0%,  #4A70A9 33%, #069cbe 66%, #035a94 100%);
+        background-size: 250% 250%;
+        animation: wave 6s linear infinite;
+        position: relative;
+      }
+      
+      @keyframes wave {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      body {
+        font-family: 'Newsreader', serif;
+      }
+
+      .font-newsreader {
+        font-family: 'Newsreader', serif;
+      }
+
+      html { scroll-behavior: smooth; }
+
+    .fade-in {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    } 
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <nav class="sticky top-0 z-50 w-full animate-gradient border-b border-[#035a94]">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
+    <div class="flex items-center gap-3 fade-in">
+        <img src="Image_Element/Company_Logos.png" class="h-24" alt="Flowbite Logo">
+        <span class="self-center text-3xl whitespace-nowrap text-[#f5f5f5] font-newsreader font-semibold">Mengrita</span>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 fade-in">
+        <li><a href="index.html" class="block py-2 px-3 text-[#069cbe] rounded-lg bg-white hover:bg-[#f5f5f5]/75 bg-[#f5f5f5]/75 hover:underline" aria-current="page">Beranda</a></li>
+        <li><a href="form.html" class="block py-2 px-3 text-[#069cbe] rounded-lg bg-white hover:bg-[#f5f5f5]/75 hover:underline">Form User</a></li>
+    </ul>
+    </div>
+    </div>
+    </nav>
+
+
+    <!-- HERO 1 / PENGISI FORM -->
+    <section id="hero1" class="bg-[#069cbe]">
+      <div class="max-w-screen-xl mx-auto px-4 py-12 text-center">
+        <h1 class="text-4xl font-bold text-white mb-4 fade-in">Dapatkan pesan dari Mengrita</h1>
+        <p class="text-lg text-white mb-8 fade-in">Silakan isi form di bawah ini untuk mendapatkan pesan di Gmail kalian🤑🤑🤑</p>
+        
+        <form id="contactForm" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg fade-in">
+          <div class="mb-4 text-left">
+            <label for="name" class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label>
+            <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-[#069cbe]" placeholder="Masukan nama aslimu!!! (Atau nama palsu saja gpp)">
+          </div>
+          
+          <div class="mb-4 text-left">
+            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-[#069cbe]" placeholder="Namamu@Gmail.com">
+          </div>
+
+          <div class="mb-4 text-left">
+            <label for="message" class="block text-gray-700 font-semibold mb-2">Pesan untuk Admin</label>
+            <textarea id="message" rows="4" class="w-full px-3 py-2 border border-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-[#069cbe]" placeholder="Kata kata untuk si Admin...🤑"></textarea>
+          </div>
+          
+          <button type="submit" class="w-full bg-[#069cbe] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#069cbe]/75 hover:underline transition-colors duration-300">Selesai</button>
+        </form>
+      </div>
+      
+<!-- SCRIPT -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    const response = await fetch("http://localhost:3000/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (response.ok) {
+      alert("Pesan terkirim! Silakan cek email konfirmasi kamu.");
+      document.getElementById("contactForm").reset();
+    } else {
+      alert("Gagal mengirim pesan, coba lagi nanti.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Terjadi kesalahan saat mengirim pesan.");
+  }
+});
+</script>
+
+    <!-- FOOTER -->
+<footer id="footer" class="bg-[#069cbe]">
+  <div class="mx-auto max-w-7xl px-4 pt-4 pb-8 sm:px-6 lg:px-8">
+    <div class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+      <div class="mx-auto max-w-sm lg:max-w-none">
+        <p class="mt-4 text-center text-[#f5f5f5] lg:text-left lg:text-lg">
+          Dibuat dengan 💔 oleh Wiryateja Pamungkas.
+        </p>
+        <a href="https://wa.me/6281803061922" target="_blank"
+           class="inline-block mt-4 bg-transparent border-2 border-[#f5f5f5] text-[#f5f5f5] font-bold py-3 px-6 rounded-full hover:bg-[#f5f5f5] hover:text-[#069cbe] transition-colors duration-300">
+          Panggil Aku di WhatsApp
+        </a>
+      </div>
+
+      <div class="flex items-center justify-center lg:justify-end">
+        <p class="text-center text-sm text-[#f5f5f5]">
+          Mengrita sejak 2025. Dilindungi oleh Hak Cipta.
+          <br>
+          Terimakasih banyak untuk
+          <a class="text-[#f5f5f5] underline hover:text-[#f5f5f5]">AI (Github Copilot, ChatGPT, Gemini)</a>
+          serta 
+          <a class="text-[#f5f5f5] underline hover:text-[#f5f5f5]">TailswindUI (Hyper UI, Daisy, Flowbite)</a> dan lainnya yang sudah membantu dalam pembuatan website ini.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

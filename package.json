@@ -1,0 +1,28 @@
+{
+  "name": "website_berita",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MengWirya/Mengrita-Website-Berita-FINAL.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MengWirya/Mengrita-Website-Berita-FINAL/issues"
+  },
+  "homepage": "https://github.com/MengWirya/Mengrita-Website-Berita-FINAL#readme"
+}
