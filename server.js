@@ -2,10 +2,20 @@ import express from "express";
 import nodemailer from "nodemailer";
 import bodyParser from "body-parser";
 import cors from "cors";
-// import dotenv from "dotenv";
-// dotenv.config();
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
+
+app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use(cors({ origin: "http://127.0.0.1:5500" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -42,10 +52,10 @@ app.post("/send", async (req, res) => {
       text: `Halo ${name},\n\nKami telah menerima pesanmu:\n"${message}"\n\nKami akan membalas secepatnya!\n\nSalam,\nDengan hormat, Wiryateja Pamungkas`,
     });
 
-    res.status(200).send("Emails sent successfully!");
+    res.status(200).send("Emails berhasil dikirim");
   } catch (error) {
     console.error("Email error:", error);
-    res.status(500).send("Failed to send emails.");
+    res.status(500).send("Email gagal dikirim");
   }
 });
 
